@@ -78,9 +78,9 @@ export default function Header() {
     >
       {/* ── Top bar ────────────────────────────────────────── */}
       <div className="bg-brand-navy text-white text-xs py-1.5">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          <span>🚚 Free delivery on orders over 500 EGP</span>
-          <div className="flex items-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-2">
+          <span className="truncate">🚚 <span className="hidden xs:inline">Free delivery on orders over </span><span className="xs:hidden">Free delivery </span>500 EGP</span>
+          <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
             <button
               onClick={toggleLang}
               className="hover:text-brand-teal transition-colors font-medium"
@@ -95,7 +95,7 @@ export default function Header() {
       </div>
 
       {/* ── Main header ────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-4">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <div className="flex items-center gap-2">
@@ -109,7 +109,7 @@ export default function Header() {
         </Link>
 
         {/* Search */}
-        <form onSubmit={handleSearch} className="flex-1 max-w-2xl mx-auto">
+        <form onSubmit={handleSearch} className="order-last md:order-none w-full md:flex-1 md:max-w-2xl md:mx-auto">
           <div className="flex items-center bg-gray-50 border-2 border-brand-border rounded-xl overflow-hidden focus-within:border-brand-navy focus-within:bg-white transition-all">
             <input
               ref={inputRef}
@@ -129,7 +129,7 @@ export default function Header() {
         </form>
 
         {/* Right actions */}
-        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0 ml-auto md:ml-0">
           {/* Language toggle mobile */}
           <button
             onClick={toggleLang}
