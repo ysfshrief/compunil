@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '400px',
+      },
       colors: {
         brand: {
           navy:    '#1B3A7A',
