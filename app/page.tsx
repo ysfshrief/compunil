@@ -72,7 +72,7 @@ export default function HomePage() {
     <div className="bg-gray-50">
       {/* ── Hero ──────────────────────────────────────────── */}
       <section className={`relative bg-gradient-to-br ${s.bg} text-white overflow-hidden`}>
-        <div className="max-w-7xl mx-auto px-4 py-16 sm:py-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 py-12 sm:py-24 relative z-10">
           <div className="max-w-xl">
             <motion.span
               key={`badge-${slide}`}
@@ -105,17 +105,17 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="flex items-center gap-4"
+              className="flex flex-wrap items-center gap-3"
             >
               <Link
                 href={s.ctaHref}
-                className="px-8 py-3.5 bg-white text-brand-navy font-bold rounded-xl hover:bg-brand-light transition-colors flex items-center gap-2"
+                className="px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-brand-navy font-bold rounded-xl hover:bg-brand-light transition-colors flex items-center gap-2 text-sm sm:text-base"
               >
                 {s.cta} <FiArrowRight size={16} />
               </Link>
               <Link
                 href="/shop?sale=true"
-                className="px-6 py-3.5 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors"
+                className="px-5 sm:px-6 py-3 sm:py-3.5 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors text-sm sm:text-base"
               >
                 View Deals
               </Link>
@@ -135,8 +135,8 @@ export default function HomePage() {
         </div>
 
         {/* Decorative circles */}
-        <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/5" />
-        <div className="absolute -right-8 bottom-0 w-48 h-48 rounded-full bg-white/5" />
+        <div className="absolute -right-16 -top-16 w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-white/5 pointer-events-none" />
+        <div className="absolute -right-8 bottom-0 w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-white/5 pointer-events-none" />
       </section>
 
       {/* ── Perks bar ─────────────────────────────────────── */}
@@ -144,12 +144,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {PERKS.map((perk, i) => (
-              <div key={i} className="flex items-center gap-3">
+              <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 text-center sm:text-left">
                 <div className="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0">
                   <perk.icon size={18} className="text-brand-navy" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-semibold text-brand-navy truncate">{perk.label}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-brand-navy leading-tight">{perk.label}</p>
                   <p className="text-[11px] text-brand-muted hidden sm:block">{perk.sub}</p>
                 </div>
               </div>
